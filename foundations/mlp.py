@@ -12,7 +12,7 @@ class Solution:
         # return np.round(your_answer, 5)
         hi = x
         for i in range(len(weights)):
-            hi = hi.reshape(1, -1) @ np.array(weights[i]) + np.array(biases[i])
+            hi = hi.reshape(1, -1) @ weights[i] + biases[i]
             if i == len(weights) - 1:
                 return hi.flatten()
             hi = hi * (hi > 0)
